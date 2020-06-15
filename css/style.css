@@ -1,0 +1,133 @@
+﻿@charset 'uft-8';
+
+* { margin:0; padding:0; }
+li { list-style:none; }
+img { border:0; vertical-align:middle; }
+address { font-style:normal; }
+a { color:#000; text-decoration:none; }
+
+body { font:12px "맑은 고딕"; }
+
+#wrapper { position:relative; margin:0 auto; width:1200px; height:2000px; }
+
+/* 팝업창 */
+#pop { width:450px; height:520px; background:url(../images/popUp.jpg) no-repeat; border:2px solid #f8931d; position:absolute; left:50%; top:20%; margin-left:-225px; margin-top:-260px; box-shadow:2px 4px 4px #d18a37; z-index:2000; /*display:none; */}
+	#pop span { position:absolute; bottom:10px; right:5px; padding:4px; background-color:#ffb96a; font-weight:bold; cursor:pointer; }
+	
+/* calendar */
+#calendar { position:absolute; right:-30px; top:180px; width:600px; height:500px; background:#fff8f0; border-radius:20px; z-index:2000; font-size:14px; display:none;}
+	#calendar .txt { width:580px; height:480px; border:2px dashed #ccc; border-radius:20px; background:#fff; margin:10px auto; }
+		#calendar .cal { position:absolute; left:50%; bottom:20px; margin-left:-235px; width:470px; height:350px; z-index:2500; }
+		#calendar .fas { position:absolute; font-size:35px; color:#aaa; cursor:pointer; }
+			#calendar .fas:nth-of-type(1) { left:180px; top:28px; }
+			#calendar .fas:nth-of-type(2) { right:180px; top:28px; }
+		#calendar h1 { text-align:center; font-weight:normal; font-size:30px; margin-top:10px; }
+		#calendar p { position:absolute; left:80px; top:80px; font-size:20px; color:#25511d; font-weight:bold; }
+		#calendar .button { position:absolute; right:80px; top:80px; font-size:17px; font-weight:bold; width:180px; height:30px; color:#fff; background-color:#f7931e; border-radius:10px; border:0; cursor:pointer; }
+			#calendar .button:hover { background-color:#fff; color:#f7931e; border:1px solid #f7931e; }
+			
+		#calendar .cal { cursor:pointer; }		
+
+
+/* header */
+#header { position:relative; width:100%; height:240px; z-index:1500; }
+	#header h1 { text-align:center; padding-top:20px; }
+		#header h1 img { width:200px; height:160px; }
+			#header h3 { position:absolute; right:210px; top:80px; transition:all 0.5s }
+			#header h3:hover { transform:scale(1.1); }
+	
+	/* 메뉴 뒤쪽으로 전체 배경으로 쓸 공간 */
+	#gnbBack { position:absolute; left:0; top:240px; background:rgba(85, 47, 7, 0.7); width:100%; height:360px; z-index:200; display:none; }
+	
+	/* gnb */
+	#gnb { position:absolute; top:200px; left:0; width:1200px; height:40px; background:#25511d; z-index:300; }
+		#gnb>li { position:relative; float:left; text-align:center; width:130px; margin:0 8px; }
+				#gnb>li.menu:nth-child(7) { margin-left:20px; }
+				#gnb>li.menu:nth-child(8) { margin-left:25px; }
+			#gnb>li.menu a { color:#fff; font-weight:bold; font-size:18px; line-height:40px; }
+				#gnb>li ul.sub { display:none; }
+				#gnb>li ul.sub a { font-weight:normal; font-size:16px; }
+
+
+/* 뒷배경 사진 */
+	#bgImg { position:absolute; left:0; top:240px; z-index:1; opacity:0.8; }
+
+/* top nav */
+#top { position:absolute; right:20px; bottom:180px; cursor:pointer; }
+
+/* container */
+#container { position:relative; width:800px; height:1600px; z-index:300; margin:0 auto; background:rgba(255, 255, 255, 0.8); }
+	
+	
+	/* slide */
+	.slide { position:relative; top:20px; left:60px; width:700px; height:600px; overflow:hidden; }
+		.slide img { position:absolute; left:0; width:700px; height:600px; }
+
+	
+	/* slider*/
+	.icon { position:absolute; left:376px; top:590px;  }
+		.icon li { display:inline-block; margin-right:10px; transition:all 0.5s; cursor:pointer; }
+			.icon li.on { transform:scale(1.4); } /* 제이쿼리에 적용할 클래스 */
+			.icon li.off { transform:scale(1);} /* 제이쿼리에 적용할 클래스 */
+	/* about */
+	.about { position:relative; top:30px; left:260px; width:300px; height:80px; text-align:center; }
+		.about h3 { font-size:35px; font-family:"Juice ITC"; color:#f7931e; }
+		
+	/* nav */
+	.nav { position:relative; top:60px; left:190px; font-size:23px; font-family:"Juice ITC"; text-align:center; line-height:40px;  }
+		.nav li { width:200px; height:40px; float:left; background:#25511d; border-radius:50px; }
+		.nav li:hover { background:#fff; border:1px solid #000; }
+		.nav li:hover a { color:#000; }
+			.nav ul li:nth-child(2) { margin-left:40px; }		
+			.nav ul li a { color:#fff; }
+
+	/* charm */
+	.charm { position:relative; top:120px; width:100%; height:250px; }
+		.charm ul li { position:absolute; left:60px; overflow:hidden; width:170px; height:100px; }
+		.charm li:nth-child(1) { width:300px; height:200px; }
+		.charm li:nth-child(2) { left:380px; }
+		.charm li:nth-child(3) { left:570px; }		
+		
+		.charm li.big img { width:300px; height:200px; transition:all 1s; }
+		.charm li.small img{ width:170px; height:100px; transition:all 1s; }
+			.charm li:hover img { transform:scale(1.2); }
+
+			.charm div.txt { position:absolute; top:120px; right:80px; width:300px; height:60px; text-align:center; }
+			.charm h3 { font-size:30px; color:#f7931e; font-family:"Juice ITC"; }
+
+	/* private */
+	.private { position:relative; top:120px; width:100%; height:250px; }
+		.private ul li { position:absolute; left:60px; overflow:hidden; width:170px; height:100px; }
+		.private li:nth-child(2) { left:250px; }
+		.private li:nth-child(3) { width:300px; height:200px; left:440px; }
+		
+		.private li.big img { width:300px; height:200px; transition:all 1s; }
+		.private li.small img { width:170px; height:100px; transition:all 1s; }
+			.private li:hover img { transform:scale(1.2); }
+
+			.private div.txt { position:absolute; top:120px; left:80px; width:300px; height:60px; text-align:center; }
+			.private h3 { font-size:30px; color:#f7931e; font-family:"Juice ITC"; }
+		
+	/* special	*/
+	.special { position:relative; top:120px; width:1140; height:300px; text-align:center; }
+		.special h3 { font-size:35px; font-family:"Juice ITC"; color:#f7931e; }
+		
+		.special ul.service { margin-top:20px; cursor:pointer; }
+		.special ul.service li { display:inline-block; margin-right:20px; width:120px; height:180px; border:1px solid #000; }
+		.special ul.service li:nth-child(1) { margin-left:50px; }
+		.special ul.service img { width:120px; height:120px; float:left; opacity:0.7; }
+			.service h2 { font-size:20px; font-family:"Juice ITC"; color:#f7931e; }
+			.service strong { font-size:12px; }
+			.service small { font-size:8px; color:#a0a0a0; display:block; }
+		
+		
+/* footer */
+#footer { position:relative; width:100%; height:160px; background:#000; color:#fff;  }
+	#footer div.add { position:absolute; left:250px; top:40px; width:500px; height:80px; }
+	
+	#footer ul.info { margin-top:20px;}
+	#footer ul.info li { display:inline-block; font-weight:bold;  }
+	#footer ul.info a { color:#fff; }
+	#footer h1 img { position:absolute; right:250px; top:20px; width:135px; height:120px; }
+		
+		
